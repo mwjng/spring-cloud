@@ -14,8 +14,12 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
+    url: jdbc:mysql://localhost:3306/mydb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Tlqkf0707!!
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:testdb
 
 eureka:
   client:

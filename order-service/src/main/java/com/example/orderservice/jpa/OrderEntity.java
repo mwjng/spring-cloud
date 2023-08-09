@@ -2,9 +2,13 @@ package com.example.orderservice.jpa;
 
 import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -26,7 +30,8 @@ public class OrderEntity implements Serializable {
     private String userId;
     @Column(nullable = false, unique = true)
     private String orderId;
-    @Column(nullable = false, updatable = false, insertable = false)
-    @ColumnDefault(value = "CURRENT_TIMESTAMP")
-    private Date createdAt;
+    @Column(nullable = false, updatable = false)
+//    @ColumnDefault(value = "CURRENT_TIMESTAMP")
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 }

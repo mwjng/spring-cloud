@@ -41,7 +41,7 @@ public class SecurityConfig {
         http.csrf().disable();
         http.authorizeRequests().antMatchers("/actuator/**").permitAll();
         http.authorizeRequests().antMatchers("/**")
-                .access("hasIpAddress('" + "192.168.35.158" + "')")
+                .access("hasIpAddress('" + "172.18.0.5" + "')")
                 .and()
                 .addFilter(getAuthenticationFilter());
 

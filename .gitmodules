@@ -1,0 +1,3 @@
+[submodule "config-service/src/main/resources/config"]
+	path = config-service/src/main/resources/config
+	url = https://github.com/mwjng/spring-cloud-config.git
